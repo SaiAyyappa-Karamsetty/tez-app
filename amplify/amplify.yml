@@ -5,9 +5,10 @@ backend:
       commands:
         - pip3 install --user pipenv venv # Ensure pipenv is installed
         - export PATH=$PATH:/root/.local/bin
+        - pipenv install  # Installs the Python dependencies
     build:
       commands:
-        - pipenv install  # Installs the Python dependencies
+       
         - amplifyPush --simple
 frontend:
   phases:
