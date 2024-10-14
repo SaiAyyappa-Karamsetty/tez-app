@@ -3,7 +3,7 @@ backend:
   phases:
     preBuild:
       commands:
-        - pip3 install --user pipenv  # Ensure pipenv is installed
+        - pip3 install --user pipenv virtualenv # Ensure pipenv is installed
         - export PATH=$PATH:/root/.local/bin
     build:
       commands:
