@@ -1,0 +1,28 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - pip3 install --user pipenv  # Ensure pipenv is installed
+        - export PATH=$PATH:/root/.local/bin
+    build:
+      commands:
+        - pipenv install  # Installs the Python dependencies
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 20.15.0
+        - nvm use 20.15.0
+        - npm ci --cache .npm --prefer-offline
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist/tez-build/browser
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .npm/**/*
