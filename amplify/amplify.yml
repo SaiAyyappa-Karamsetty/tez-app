@@ -3,22 +3,26 @@ backend:
   phases:
     preBuild:
       commands:
-        - pip3 install --user pipenv venv # Ensure pipenv is installed
-        - export PATH=$PATH:/root/.local/bin
+        - echo "Installing pipenv and venv..."
+        - pip3 install --user pipenv virtualenv  # Ensure pipenv and virtualenv are installed
+        - export PATH=$PATH:/root/.local/bin  # Add the local bin to PATH
         - pipenv install  # Installs the Python dependencies
     build:
       commands:
-       
+        - echo "Running amplify push..."
         - amplifyPush --simple
 frontend:
   phases:
     preBuild:
       commands:
+        - echo "Installing Node.js version 20.15.0..."
         - nvm install 20.15.0
         - nvm use 20.15.0
+        - echo "Installing npm dependencies..."
         - npm ci --cache .npm --prefer-offline
     build:
       commands:
+        - echo "Building the frontend..."
         - npm run build
   artifacts:
     baseDirectory: dist/tez-build/browser
