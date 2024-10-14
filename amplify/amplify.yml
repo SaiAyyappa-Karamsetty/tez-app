@@ -3,10 +3,13 @@ backend:
   phases:
     preBuild:
       commands:
-        - echo "Installing pipenv and venv..."
-        - pip3 install --user pipenv virtualenv  # Ensure pipenv and virtualenv are installed
-        - export PATH=$PATH:/root/.local/bin  # Add the local bin to PATH
-        - pipenv install  # Installs the Python dependencies
+        - echo "Installing pipenv and virtualenv..."
+        - pip3 install --user pipenv virtualenv  # Install both in one command
+        - export PATH=$PATH:$HOME/.local/bin  # Update PATH for user-installed packages
+        - echo "Verifying pipenv and virtualenv installation..."
+        - pipenv --version  # Verify pipenv installation
+        - virtualenv --version  # Verify virtualenv installation
+        - pipenv install  # Install Python dependencies
     build:
       commands:
         - echo "Running amplify push..."
