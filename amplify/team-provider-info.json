@@ -1,3 +1,28 @@
 {
-  
+  "jacquie": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tezbuild-jacquie-a6bd6-authRole",
+      "UnauthRoleArn": "arn:aws:iam::324037281461:role/amplify-tezbuild-jacquie-a6bd6-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::324037281461:role/amplify-tezbuild-jacquie-a6bd6-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tezbuild-jacquie-a6bd6-deployment",
+      "UnauthRoleName": "amplify-tezbuild-jacquie-a6bd6-unauthRole",
+      "StackName": "amplify-tezbuild-jacquie-a6bd6",
+      "StackId": "arn:aws:cloudformation:us-east-1:324037281461:stack/amplify-tezbuild-jacquie-a6bd6/34d1fc30-8ae7-11ef-8f14-0affca07db3d",
+      "AmplifyAppId": "d3jbhkfy50ff2s"
+    },
+    "categories": {
+      "auth": {
+        "tezbuild": {}
+      },
+      "function": {
+        "contentmanagement": {},
+        "navpublic": {},
+        "productspublic": {},
+        "productupload": {},
+        "TezBuildData": {},
+        "TezBuildDataBucket": {}
+      }
+    }
+  }
 }
